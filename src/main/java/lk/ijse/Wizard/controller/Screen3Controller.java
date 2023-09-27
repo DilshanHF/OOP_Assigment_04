@@ -1,0 +1,70 @@
+package lk.ijse.Wizard.controller;
+
+import com.jfoenix.controls.JFXBadge;
+import com.jfoenix.controls.JFXButton;
+import com.sun.javafx.menu.MenuItemBase;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class Screen3Controller {
+
+    public TextField txtfield;
+    public AnchorPane root;
+
+    public JFXButton nextButton;
+
+
+    public void initialize() throws NullPointerException {
+        // Initially, disable the "Next" button
+        //MenuItemBase nextBuuton = null;
+        //MenuItemBase nextButton = null;
+        nextButton.setDisable(true);
+
+        // Add a listener to the text field's textProperty
+        //JFXBadge txtfield = null;
+        txtfield.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Enable the "Next" button if there is text in the text field
+            nextButton.setDisable(newValue.isEmpty());
+        });
+    }
+
+    public void btnOnBack(ActionEvent actionEvent) throws IOException {
+
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/screen02_form.fxml"));
+        Scene scene = new Scene(rootNode);
+
+
+        Stage secondstage = (Stage)this.root.getScene().getWindow();
+
+
+
+        secondstage.setScene(scene);
+        secondstage.setTitle("Wizard Form");
+    }
+
+    public void btnOnNext(ActionEvent actionEvent) throws IOException {
+
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/last_form.fxml"));
+        Scene scene = new Scene(rootNode);
+
+
+        Stage secondstage = (Stage)this.root.getScene().getWindow();
+
+
+
+        secondstage.setScene(scene);
+        secondstage.setTitle("Wizard Form");
+    }
+
+    public void btnOnCancel(ActionEvent actionEvent) {
+        Platform.exit();
+    }
+}

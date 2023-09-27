@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Wizard.controller.Screen3Controller">
+   <children>
+      <Label layoutX="14.0" layoutY="6.0" prefHeight="65.0" prefWidth="566.0" text="Welcome to ENGENEIES Environment setup Wizard" wrapText="true">
+         <font>
+            <Font name="Book Antiqua Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="107.0" prefHeight="34.0" prefWidth="582.0" text="Fill in the  following requirments to continue the installation procces " wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="150.0" prefHeight="18.0" prefWidth="293.0" text="Enter Your Name," />
+      <TextField fx:id="txtfield" layoutX="61.0" layoutY="200.0" prefHeight="66.0" prefWidth="488.0" />
+      <JFXButton buttonType="RAISED" layoutX="375.0" layoutY="361.0" onAction="#btnOnBack" style="-fx-background-color: #bedce3;" text="back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="nextButton" buttonType="RAISED" layoutX="450.0" layoutY="361.0" onAction="#btnOnNext" style="-fx-background-color: #bedce3;" text="next">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="523.0" layoutY="361.0" onAction="#btnOnCancel" style="-fx-background-color: #bedce3;" text="cancel">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
